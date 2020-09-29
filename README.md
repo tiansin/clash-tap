@@ -10,10 +10,12 @@ Or with http://yacd.haishan.me/ from https://github.com/haishanh/yacd
 
 # how to use
 
-replace `以太网` in `config.yaml` with your current outbound netadapter name from
+Run `add_tap_device.bat` once
+
+Then replace `以太网` in `config.yaml` with your current outbound netadapter name from
 
 ![image](https://user-images.githubusercontent.com/23069451/79680340-49bf9980-8241-11ea-86e3-46e39b576867.png)
 
-start by using `start.bat`
+Run `start.bat` to start
 
-stop by using `stop.bat`
+RUn `stop.bat` to stop
