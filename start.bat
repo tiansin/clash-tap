@@ -5,7 +5,6 @@ set DEVICE_NAME=clash-tap
 
 set PATH=%PATH%;%SystemRoot%\system32;%SystemRoot%\system32\wbem;%SystemRoot%\system32\WindowsPowerShell/v1.0
 
-call add_tap_device.bat
 call clash.vbs
 call tun2socks.vbs
 
