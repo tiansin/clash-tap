@@ -18,4 +18,4 @@ Then replace `以太网` in `config.yaml` with your current outbound netadapter 
 
 Run `start.bat` to start
 
-RUn `stop.bat` to stop
+Run `stop.bat` to stop
