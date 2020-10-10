@@ -8,8 +8,8 @@ interface-name: 以太网
 
 dns:
   enable: true
-  ipv6: true
   listen: ':53'
+  ipv6: true
   default-nameserver:
     - 223.5.5.5
   enhanced-mode: fake-ip
