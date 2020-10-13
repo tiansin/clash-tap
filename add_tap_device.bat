@@ -78,9 +78,9 @@ rem   exit /b 1
 rem )
 
 echo Set all adapters metric to auto.
-for /f "skip=3 tokens=4" %%a in ('netsh interface show interface') do (
-  netsh interface ip set interface %%a metric=automatic
-  netsh interface ipv6 set interface %%a metric=automatic
+for /f "skip=3 tokens=4*" %%a in ('netsh interface show interface') do (
+  netsh interface ip set interface "%%a %%b" metric=automatic
+  netsh interface ipv6 set interface "%%a %%b" metric=automatic
 )
 
 echo Set TAP adapter metric to 0.

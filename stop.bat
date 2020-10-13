@@ -10,8 +10,8 @@ taskkill /f /im tun2socks.exe /t
 
 netsh interface ip delete route 0.0.0.0/0 %DEVICE_NAME%
 netsh interface ipv6 delete route ::/0 %DEVICE_NAME%
-for /f "skip=3 tokens=4" %%a in ('netsh interface show interface') do (
-  netsh interface ip set dnsservers %%a dhcp validate=no
-  netsh interface ipv6 set dnsservers %%a dhcp validate=no
+for /f "skip=3 tokens=4*" %%a in ('netsh interface show interface') do (
+  netsh interface ip set dnsservers "%%a %%b" dhcp validate=no
+  netsh interface ipv6 set dnsservers "%%a %%b" dhcp validate=no
 )
 ipconfig /flushdns
