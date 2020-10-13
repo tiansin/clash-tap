@@ -69,13 +69,13 @@ if %errorlevel% neq 0 (
   exit /b 1
 )
 
-echo Configuring primary DNS...
-netsh interface ip set dnsservers %DEVICE_NAME% static 10.0.0.2 validate=no
-netsh interface ipv6 set dnsservers %DEVICE_NAME% static fdfe:dcba:9876::2 validate=no
-if %errorlevel% neq 0 (
-  echo Could not configure TAP device primary DNS. >&2
-  exit /b 1
-)
+rem echo Configuring primary DNS...
+rem netsh interface ip set dnsservers %DEVICE_NAME% static 10.0.0.2 validate=no
+rem netsh interface ipv6 set dnsservers %DEVICE_NAME% static fdfe:dcba:9876::2 validate=no
+rem if %errorlevel% neq 0 (
+rem   echo Could not configure TAP device primary DNS. >&2
+rem   exit /b 1
+rem )
 
 echo Set all adapters metric to auto.
 for /f "skip=3 tokens=4" %%a in ('netsh interface show interface') do (
