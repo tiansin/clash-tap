@@ -1,8 +1,8 @@
 # clash-tap
 
-clash from https://github.com/Dreamacro/clash/releases
+clash (not Premium) from https://github.com/Dreamacro/clash/releases
 
-tun2socks built from https://github.com/ambrop72/badvpn (support IPv6)
+tun2socks built from https://github.com/ambrop72/badvpn (support IPv6 but only with TCP currently)
 
 You can use clash-tap with http://clash.razord.top/ from https://github.com/Dreamacro/clash-dashboard
 
