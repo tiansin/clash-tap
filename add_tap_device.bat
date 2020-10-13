@@ -23,7 +23,7 @@ if %errorlevel% neq 0 (
 type "%BEFORE_DEVICES%"
 
 echo Creating TAP network device...
-for /f "tokens=4 delims=[.] " %%i in ('ver') do (
+for /f "tokens=4 delims=. " %%i in ('ver') do (
   if %%i==10 tap-windows6\tap-windows-9.24.2-I601-Win10.exe /S
   if %%i==6 tap-windows6\tap-windows-9.24.2-I601-Win7.exe /S
 )
@@ -78,9 +78,9 @@ rem   exit /b 1
 rem )
 
 echo Set all adapters metric to auto.
-for /f "skip=3 tokens=4*" %%a in ('netsh interface show interface') do (
-  netsh interface ip set interface "%%a %%b" metric=automatic
-  netsh interface ipv6 set interface "%%a %%b" metric=automatic
+for /f "delims=," %%a in ('Getmac /v /nh /fo csv') do (
+  netsh interface ip set interface %%a metric=automatic
+  netsh interface ipv6 set interface %%a metric=automatic
 )
 
 echo Set TAP adapter metric to 0.
