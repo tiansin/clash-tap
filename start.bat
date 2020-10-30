@@ -1,4 +1,6 @@
 @echo off
+cd /d %~dp0
+
 setlocal
 
 set DEVICE_NAME=clash-tap
