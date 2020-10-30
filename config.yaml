@@ -12,10 +12,7 @@ dns:
   ipv6: true
   default-nameserver:
     - 223.5.5.5
-  enhanced-mode: fake-ip
-  fake-ip-filter:
-    - '*.msftncsi.com'
-    - '*.msftconnecttest.com'
+  enhanced-mode: redir-host
   nameserver:
     - https://doh.dns.sb/dns-query
 
