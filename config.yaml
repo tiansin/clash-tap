@@ -12,9 +12,10 @@ dns:
   ipv6: true
   default-nameserver:
     - 223.5.5.5
+    - 223.6.6.6
   enhanced-mode: redir-host
   nameserver:
-    - https://doh.dns.sb/dns-query
+    - https://dns.alidns.com/dns-query
 
 proxies:
   - name: SS
