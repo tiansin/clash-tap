@@ -13,8 +13,8 @@ if %errorlevel% equ 0 (
   goto :configure
 )
 
-set BEFORE_DEVICES=%tmp%\outlineinstaller-tap-devices-before.txt
-set AFTER_DEVICES=%tmp%\outlineinstaller-tap-devices-after.txt
+set BEFORE_DEVICES=%tmp%\tap-devices-before.txt
+set AFTER_DEVICES=%tmp%\tap-devices-after.txt
 
 echo Storing current network device list...
 wmic nic where "netconnectionid is not null" get netconnectionid > "%BEFORE_DEVICES%"
@@ -43,7 +43,7 @@ if %errorlevel% neq 0 (
 type "%AFTER_DEVICES%"
 
 echo Searching for new TAP network device name...
-powershell "(compare-object (cat \"%BEFORE_DEVICES%\" | foreach-object {$_.trim()}) (cat \"%AFTER_DEVICES%\" | foreach-object {$_.trim()}) | format-wide -autosize | out-string).trim() | set-variable NEW_DEVICE; write-host \"New TAP device name: ${NEW_DEVICE}\"; netsh interface set interface name = \"${NEW_DEVICE}\" newname = \"%DEVICE_NAME%\"" <nul
+powershell "(compare-object (cat \"%BEFORE_DEVICES%\" | foreach-object {$_.trim()}) (cat \"%AFTER_DEVICES%\" | foreach-object {$_.trim()}) | format-wide -autosize | out-string).trim() | set-variable NEW_DEVICE; write-host \"New TAP device name: ${NEW_DEVICE}\"; netsh interface set interface name=\"${NEW_DEVICE}\" newname=\"%DEVICE_NAME%\"" <nul
 if %errorlevel% neq 0 (
   echo Could not find or rename new TAP network device. >&2
   exit /b 1
