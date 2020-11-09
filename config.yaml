@@ -15,7 +15,7 @@ dns:
     - 223.6.6.6
   enhanced-mode: redir-host
   nameserver:
-    - https://118.31.13.131/dns-query
+    - https://dns.dns-over-https.com/dns-query
 
 proxies:
   - name: SS
